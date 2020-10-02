@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
-#github_version=$(cat github_version.txt)
-github_version=1.19.2
+github_version=$(cat github_version.txt)
 ftp_version=$(cat ftp_version.txt)
 LOCALPATH=$GOPATH/src/k8s.io/kubernetes/
 BINPATH=$GOPATH/src/k8s.io/kubernetes/_output/local/bin/linux/ppc64le
