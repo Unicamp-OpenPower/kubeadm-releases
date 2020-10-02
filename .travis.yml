@@ -1,0 +1,16 @@
+os: linux
+dist: bionic
+arch: ppc64le
+sudo: required
+language: go
+
+go: "1.15.x"
+
+install:
+  - sudo apt-get update
+  - sudo apt-get install lftp rpm build-essential unzip
+  - python3 ftp_version.py
+
+script:
+  - bash build.sh
+  - bash release.sh
