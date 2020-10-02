@@ -13,7 +13,8 @@ then
     make
     cd _output/local/bin/linux/ppc64le/
     ls
-    ./kubeadm version
+    mv kubeadm kubeadm-$github_version
+    ./kubeadm-$github_version version
 
     if [[ $github_version != $ftp_version ]]
     then
