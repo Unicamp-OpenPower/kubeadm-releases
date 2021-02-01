@@ -1,5 +1,5 @@
 os: linux
-dist: bionic
+dist: focal
 arch: ppc64le
 sudo: required
 language: go

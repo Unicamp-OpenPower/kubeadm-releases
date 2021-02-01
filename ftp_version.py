@@ -4,7 +4,7 @@ html = str(
     requests.get('https://github.com/kubernetes/kubernetes/releases/latest')
     .content)
 index = html.find('Release ')
-github_version = html[index + 9:index + 18].replace('<', '').replace(' ', '').replace('\\', '')
+github_version = html[index + 20:index + 29].replace('<', '').replace(' ', '').replace('\\', '')
 
 #Remover "x"
 remove_element = "x"
@@ -18,7 +18,7 @@ file.close()
 # find and save the current Bazel version on FTP server
 html = str(
     requests.get(
-        'https://oplab9.parqtec.unicamp.br/pub/ppc64el/kubeadm/latest/'
+        'https://oplab9.parqtec.unicamp.br/pub/ppc64el/kubeadm/latest'
     ).content)
 index = html.rfind('kubeadm-')
 ftp_version = html[index + 8:index + 15].replace('<', '').replace(' ', '').replace('\\', '')
@@ -27,6 +27,10 @@ file.writelines(ftp_version)
 file.close()
 
 # find and save the oldest Bazel version on FTP server
+html = str(
+    requests.get(
+        'https://oplab9.parqtec.unicamp.br/pub/ppc64el/kubeadm'
+    ).content)
 index = html.find('kubeadm-')
 delete = html[index + 8:index + 15].replace('<', '').replace(' ', '').replace('\\', '')
 file = open('delete_version.txt', 'w')
