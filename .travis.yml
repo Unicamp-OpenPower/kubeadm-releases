@@ -4,11 +4,12 @@ arch: ppc64le
 sudo: required
 language: go
 
-go: "1.15.x"
+go: "1.16.x"
 
 install:
   - sudo apt-get update
   - sudo apt-get install lftp rpm build-essential unzip
+  - printf "set ssl:verify-certificate false" >> ~/.lftprc
   - python3 ftp_version.py
 
 script:
