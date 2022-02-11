@@ -11,7 +11,7 @@ then
     unzip v$github_version.zip
     mv kubernetes-$github_version/ kubernetes
     cd kubernetes
-    make
+    make kubeadm
     cd _output/local/bin/linux/ppc64le/
     ls
     mv kubeadm kubeadm-$github_version
