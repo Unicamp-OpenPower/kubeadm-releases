@@ -8,7 +8,7 @@ then
     mkdir -p $GOPATH/src/k8s.io
     cd src/k8s.io
     wget https://github.com/kubernetes/kubernetes/archive/v$github_version.zip
-    unzip v$github_version.zip
+    unzip -v v$github_version.zip
     mv kubernetes-$github_version/ kubernetes
     cd kubernetes
     make kubeadm
